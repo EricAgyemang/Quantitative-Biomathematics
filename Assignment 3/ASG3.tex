@@ -1,0 +1,105 @@
+
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{center}
+\textbf{ MAT 442: HOMEWORK 3}\\
+\textbf{\ ERICAGYEMANG (Spring 2019)}\\
+\end{center}
+
+\begin{enumerate} 
+\item Intraspecies scramble competition occurs when the growth and reproduction are depressed equally across individuals in a population as the intensity of competition increases.This type of competition can be referred to as socialist competition because resources are available to all individuals and as the the population increase the rate of growth decreases and in bad extreme cases where there is shortage of resources they all die but will survive for the opposite scenario.In scramble competition, the discrete time logistic model is one of the example to describe the dynamics of population density $y_k$ with regards to the carrying capacity $k$. The logistic model assume a parabola shape with $y=0$ and $y=1$, we notice from the early stages the population is small and the resources is abundant.After the function reaches it peak(maximum), the resources available begins to diminish and decrease with no intention of asymptotic when $r>1$.Since resources in scramble competition is equally divided among the individuals, each individual receives a very small amount, therefore individual begin to die.This effect is then transformed down to to the next generation.Another example of model used in scramble competition is Ricker's metered fishery model.This model put the younger generation at higher risk because the younger population have a higher tendency of being a source of food for older generation and will eventually wipe out the entire population.
+
+
+
+\cleardoublepage 
+
+\item Intraspecies contest competition occurs  when some individuals claim enough resources while denying others a share, which prevent the reproduction and development of other individuals.This type of competition can be also referred to as capitalist competition because it involves the survival of the fittest. Biologically, contest is the opposite of scramble competition. Intraspecies contest competition influence population growth, development, survival and reproduction.The Beverton-Holt model is an example used to represent the dynamics resulting from contest competition.As population density increases at point where resources in insufficient to provide for all individual in a population some individual in the contest competition reduce their in take resources ,this reduction slows down the rate of growth and development. 
+
+
+\cleardoublepage
+
+\item (a) Using mortality rate $\phi$ which is assumed to be in linear in $z$:
+\[\phi(z)=\mu_1+\mu_2z, \hspace{0.5cm}\mu_1,\mu_2>0.\]
+Then the ODE we need to solve is
+\[\frac{dz}{dt}=-z(\mu_1+\mu_2) \frac{dz}{z(\mu_1+\mu_2z)}=-dt, z(0)=b_k=ry_k, z(T)=f(y_k).\]\\
+We use separation of variables and integration by partial fractions: in particular,\\
+\[\frac{1}{z(\mu_1+\mu_2z)}=\frac{1}{u}\frac{1}{z}-\frac{\mu_2}{\mu_1}\frac{1}{\mu_1+\mu_2}z,\]
+we have
+\[\frac{1}{\mu}\int^{f(y_k)}_{ry_k}\frac{1}{z}-\frac{1}{\mu}\int^{f(y_k)}_{ry_k}\frac{\mu_2}{\mu_1+\mu_2z}dz=-\int^T_0dt\]
+\[\Rightarrow \frac{1}{\mu_1}ln\left|\frac{f(y_k)}{ry_k}\right|-ln\left|\frac{\mu_1+\mu_2z(T)}{\mu_1+\mu_2z(0)}\right|=-T\]
+we now solve LHS,RHS and exponentiate both side
+\[ln\left|\frac{f(y_k)}{ry_k}\frac{\mu_1+\mu_2ry_k}{\mu_1+\mu_2f(y_k)}\right|=-\mu_1T\]
+\[\frac{\mu_1+\mu_2ry_k}{\mu_1/f(y_k)+\mu_2ry_k}=e^{-\mu_1Tf(y_k)}\]
+\[\Rightarrow f(y_k)=\frac{\mu_1ry_k}{\mu_1e^{\mu_1T}+(e^{\mu_1T}-1)\mu_2ry_k}=\frac {e^{-\mu_1T}ry_k}{1+[\frac {e^{\mu_1T}-1}{\mu_1e^{\mu_1T}}]\mu_2ry_k}.\]
+
+After integrating this with respect to $z$, and $-1$ with respect to $t$, with limits $z(0)=ry_k$ to $z(T)=F(K)$ and $0$ to T respectively, we solve for $f(y_k)$ and obtain \textbf{Beverton-Holt model} with
+\[a=e^{\mu_1T}r\hspace{0.2cm},\hspace{0.2cm}b=(\frac {e^{\mu_1T}-1}{\mu_1e^{\mu_1T}})\mu_2r\]
+we get
+\[\boxed{y_k=f(y_k)=\frac{ay_k}{1+by_k}}\]
+(b)\[f(y)=\frac{ay}{1+by}=ay(1+by)\]\\
+we find the derivative with respect to y
+\[f'(y)=-ay(1+by)^{-2}b+a(1+by)^{-1}=\frac{-ayb}{(1+by)}^2+\frac{a}{(1+by)}=\frac{(-ayb+a+aby)}{(1+by)^2},\]
+therefore
+\[f'(y)=\frac{a}{(1+by)}>0\hspace{0.5cm} \mbox{where}\hspace{0.2cm} a,b>0\hspace{0.2cm}\mbox{hence the proof}.\]
+and  
+\[f'(0)=\frac{a}{(1+b(0))}=a\hspace{0.5cm} \mbox{where} \hspace{0.2cm}a,b>0\hspace{0.2cm} \mbox{hence the proof}.\]
+
+
+
+\cleardoublepage
+
+\item Section 2.4 (page 57) : Exercise 2.(a) We know that $(r>0,\alpha>0,0<\beta<1)$.we find nonnegative equilibrium points for 
+\[f(y)=ry(1+\alpha)^{-\beta}=y.\]\\
+thus
+
+\begin{align*} 
+&\Rightarrow \frac{ry(1+\alpha)^{-\beta}{ry}}{ry}=y\\
+& \Rightarrow r=\frac{1}{(1+\alpha y)^{-\beta}}\\
+&\Rightarrow r^\frac{1}{\beta}=(1+\alpha y)\\
+&\Rightarrow y_\infty=\frac{r^{1/\beta}-1}{\alpha}\hspace{0.5cm} \mbox{where}\hspace{0.5cm} \alpha>0.
+\end{align*}
+
+satisfying the condition of $r$
+\[\boxed{\frac{r^{1/\beta}-1}{\alpha}>0\Longleftrightarrow r^{1/\beta}>1\Longleftrightarrow r>1}\]
+now the derivative will be
+\[f'(y)=ry(1+\alpha y)^{-\beta}=r(1+\alpha y)^{-\beta}-ry\alpha\beta(1+\alpha y)^{-\beta-1}.\]
+and we substituting our $y_\infty$ 
+
+\[f'(y)_\infty=(1+(r^{1/\beta}-1)^{-\beta}-r(r^{1/\beta}-1)\beta(1+(r^{1/\beta}-1))^{-\beta-1}=1-\beta(r^{\beta+1/\beta}-r)(r^{-\beta-1/\beta}),\]
+we get
+\[\boxed{1-\beta(1-1/r^{1/\beta})}.\]
+since we do not know what conditions satisfies our $r$ as LAS we follow the equilibrium stability theorem in order to satisfy the condition by setting interval ranges and performing algebraic analysis so we want 
+\[-1<1-\beta(1-1/r^{1/\beta})<1\Longleftrightarrow-\beta<-\beta/r^{1/\beta}\Longleftrightarrow 1/r^{1/\beta}<1\Longleftrightarrow1<r^{1/\beta},\]
+thus 
+\[\boxed{r>1}\hspace{0.2cm} \mbox{is LAS.}\]
+
+
+
+
+
+
+
+
+\cleardoublepage
+
+
+
+
+
+\end{enumerate}
+
+
+
+\begin{thebibliography}{99}
+\bibitem{r1}http://homepages.wmich.edu/malcolm/BIOS6150Ecology/Lectures/6150Week03.pdf
+
+\bibitem{r2}https://en.wikipedia.org/wiki/contestcompetition
+
+\end{thebibliography}
+
+\end{document}
